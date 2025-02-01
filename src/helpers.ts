@@ -79,3 +79,20 @@ export function normalizeToken(token: string): string {
   }
   return token
 }
+
+/**
+ * Cleans query parameters by removing `undefined` values
+ * and replacing `null` with an empty string.
+ *
+ * @param availableQueryParams - An object containing query parameters.
+ * @returns A new object without `undefined` values and with `null` replaced by ''.
+ */
+export function cleanQueryParams(
+  availableQueryParams: Record<string, string | number | undefined | null>
+): Record<string, string | number> {
+  return Object.fromEntries(
+    Object.entries(availableQueryParams)
+      .filter(([_, value]) => value !== undefined) // Remove undefined values
+      .map(([key, value]) => [key, value ?? '']) // Replace null with an empty string
+  )
+}

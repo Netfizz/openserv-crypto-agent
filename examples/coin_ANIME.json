@@ -1,0 +1,80 @@
+{
+  "name": "Animecoin",
+  "symbol": "ANIME",
+  "logo": "https://dd.dexscreener.com/ds-data/tokens/arbitrum/0x37a645648df29205c6261289983fb04ecd70b4b3.png?key=854483",
+  "header": "https://dd.dexscreener.com/ds-data/tokens/arbitrum/0x37a645648df29205c6261289983fb04ecd70b4b3/header.png?key=854483",
+  "openGraph": "https://cdn.dexscreener.com/token-images/og/arbitrum/0x37a645648df29205c6261289983fb04ecd70b4b3?timestamp=1738451400000",
+  "links": [
+    {
+      "label": "Website",
+      "url": "https://www.anime.xyz/"
+    },
+    {
+      "label": "twitter",
+      "url": "https://x.com/animecoin"
+    },
+    {
+      "label": "DexScreener",
+      "url": "https://dexscreener.com/arbitrum/0x6ba90b4b7e42bebca076c5e532f87064c7b839c6"
+    }
+  ],
+  "pairAddress": "0x6Ba90B4b7E42bEBca076c5E532f87064C7B839c6",
+  "priceUsd": "0.04122",
+  "marketCapUsd": 228302345,
+  "pairs": [
+    {
+      "label": "Animecoin/Wrapped Ether",
+      "symbol": "ANIME/WETH",
+      "chainId": "arbitrum",
+      "dexId": "uniswap",
+      "pairAddress": "0xBBf3209130dF7d19356d72Eb8a193e2D9Ec5c234",
+      "priceUsd": "0.04039",
+      "url": "https://dexscreener.com/arbitrum/0xbbf3209130df7d19356d72eb8a193e2d9ec5c234",
+      "liquidityUsd": 3148193.37,
+      "transactions": {
+        "m5": {
+          "buys": 2,
+          "sells": 3
+        },
+        "h1": {
+          "buys": 24,
+          "sells": 29
+        },
+        "h6": {
+          "buys": 229,
+          "sells": 271
+        },
+        "h24": {
+          "buys": 859,
+          "sells": 1085
+        }
+      },
+      "volumes": {
+        "h24": 2712345.55,
+        "h6": 585430.91,
+        "h1": 33856.9,
+        "m5": 7864.17
+      },
+      "priceChanges": {
+        "m5": -0.1,
+        "h1": -1.72,
+        "h6": -7.85,
+        "h24": -9.84
+      },
+      "fdv": 166048956,
+      "marketCap": 223747243,
+      "pairCreatedAt": 1737633043000
+    }
+  ],
+  "volumes": {
+    "h24": 31261.67,
+    "h6": 4486.05,
+    "h1": 30.91,
+    "m5": 0
+  },
+  "priceChanges": {
+    "h1": -0.08,
+    "h6": -5.71,
+    "h24": -8.22
+  }
+}

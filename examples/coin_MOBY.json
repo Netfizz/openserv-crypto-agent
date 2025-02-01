@@ -1,0 +1,203 @@
+{
+  "name": "Moby AI",
+  "symbol": "MOBY",
+  "logo": "https://dd.dexscreener.com/ds-data/tokens/solana/Cy1GS2FqefgaMbi45UunrUzin1rfEmTUYnomddzBpump.png?key=8bc7c9",
+  "header": "https://dd.dexscreener.com/ds-data/tokens/solana/Cy1GS2FqefgaMbi45UunrUzin1rfEmTUYnomddzBpump/header.png?key=8bc7c9",
+  "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/Cy1GS2FqefgaMbi45UunrUzin1rfEmTUYnomddzBpump?timestamp=1738451400000",
+  "links": [
+    {
+      "label": "Website",
+      "url": "https://pump.fun/coin/Cy1GS2FqefgaMbi45UunrUzin1rfEmTUYnomddzBpump"
+    },
+    {
+      "label": "twitter",
+      "url": "https://x.com/mobyagent"
+    },
+    {
+      "label": "DexScreener",
+      "url": "https://dexscreener.com/solana/8etkbjumzq92qywhgrixw9yre552c5ntvxjnkb8xyfap"
+    }
+  ],
+  "pairAddress": "8etKbJUMZQ92qyWHgriXw9yRe552c5NtVxJnKb8XyfAp",
+  "priceUsd": "0.06754",
+  "marketCapUsd": 67548630,
+  "pairs": [
+    {
+      "label": "Moby AI/Wrapped SOL",
+      "symbol": "MOBY/SOL",
+      "chainId": "solana",
+      "dexId": "raydium",
+      "pairAddress": "AemYRZmJryzAQ9Z4RLfUBLnPRUY5ecooc94EJvemfti4",
+      "priceUsd": "0.06181",
+      "url": "https://dexscreener.com/solana/aemyrzmjryzaq9z4rlfublnpruy5ecooc94ejvemfti4",
+      "liquidityUsd": 1849662.85,
+      "transactions": {
+        "m5": {
+          "buys": 9,
+          "sells": 32
+        },
+        "h1": {
+          "buys": 341,
+          "sells": 216
+        },
+        "h6": {
+          "buys": 2976,
+          "sells": 2431
+        },
+        "h24": {
+          "buys": 8717,
+          "sells": 8168
+        }
+      },
+      "volumes": {
+        "h24": 9234134.19,
+        "h6": 2563264.55,
+        "h1": 295575.52,
+        "m5": 35927.36
+      },
+      "priceChanges": {
+        "m5": 0.45,
+        "h1": -3.69,
+        "h6": -15.07,
+        "h24": -13.22
+      },
+      "fdv": 61814950,
+      "marketCap": 61814950,
+      "pairCreatedAt": 1736791643000
+    },
+    {
+      "label": "Moby AI/USD Coin",
+      "symbol": "MOBY/USDC",
+      "chainId": "solana",
+      "dexId": "meteora",
+      "pairAddress": "CEHXJSVPVUYkGuPhr3NgbtAnjecPcEZ25JBFdn6hUf2",
+      "priceUsd": "0.06229",
+      "url": "https://dexscreener.com/solana/cehxjsvpvuykguphr3ngbtanjecpcez25jbfdn6huf2",
+      "liquidityUsd": 312777.98,
+      "transactions": {
+        "m5": {
+          "buys": 0,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 5,
+          "sells": 10
+        },
+        "h6": {
+          "buys": 77,
+          "sells": 133
+        },
+        "h24": {
+          "buys": 240,
+          "sells": 275
+        }
+      },
+      "volumes": {
+        "h24": 273320.95,
+        "h6": 74040.39,
+        "h1": 4814.73,
+        "m5": 0
+      },
+      "priceChanges": {
+        "h1": -0.91,
+        "h6": -11.2,
+        "h24": -11.2
+      },
+      "fdv": 62297090,
+      "marketCap": 62297090,
+      "pairCreatedAt": 1737009891000
+    },
+    {
+      "label": "Moby AI/AI Rig Complex",
+      "symbol": "MOBY/arc",
+      "chainId": "solana",
+      "dexId": "meteora",
+      "pairAddress": "8etKbJUMZQ92qyWHgriXw9yRe552c5NtVxJnKb8XyfAp",
+      "priceUsd": "0.06754",
+      "url": "https://dexscreener.com/solana/8etkbjumzq92qywhgrixw9yre552c5ntvxjnkb8xyfap",
+      "liquidityUsd": 49333.25,
+      "transactions": {
+        "m5": {
+          "buys": 0,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 0,
+          "sells": 0
+        },
+        "h6": {
+          "buys": 0,
+          "sells": 0
+        },
+        "h24": {
+          "buys": 42,
+          "sells": 39
+        }
+      },
+      "volumes": {
+        "h24": 27378.47,
+        "h6": 0,
+        "h1": 0,
+        "m5": 0
+      },
+      "priceChanges": {
+        "h24": -4.24
+      },
+      "fdv": 67548630,
+      "marketCap": 67548630,
+      "pairCreatedAt": 1738362502000
+    },
+    {
+      "label": "Moby AI/test griffain.com",
+      "symbol": "MOBY/GRIFFAIN",
+      "chainId": "solana",
+      "dexId": "meteora",
+      "pairAddress": "tn2Z58o2d1NH9GXgV5iJkEgjtPWPunZvZ3a8oK9TtXe",
+      "priceUsd": "0.06187",
+      "url": "https://dexscreener.com/solana/tn2z58o2d1nh9gxgv5ijkegjtpwpunzvz3a8ok9ttxe",
+      "liquidityUsd": 42221.96,
+      "transactions": {
+        "m5": {
+          "buys": 5,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 11,
+          "sells": 33
+        },
+        "h6": {
+          "buys": 167,
+          "sells": 167
+        },
+        "h24": {
+          "buys": 709,
+          "sells": 699
+        }
+      },
+      "volumes": {
+        "h24": 261132.66,
+        "h6": 72865.89,
+        "h1": 4826.25,
+        "m5": 683.96
+      },
+      "priceChanges": {
+        "m5": 0.87,
+        "h1": -4.47,
+        "h6": -14.96,
+        "h24": -12.72
+      },
+      "fdv": 61876082,
+      "marketCap": 61876082,
+      "pairCreatedAt": 1737467307000
+    }
+  ],
+  "volumes": {
+    "h24": 27378.47,
+    "h6": 0,
+    "h1": 0,
+    "m5": 0
+  },
+  "priceChanges": {
+    "h24": -4.24
+  }
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "post": {
+      "id": "1885707460771754310",
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 65,
+        "like_count": 142,
+        "quote_count": 5,
+        "bookmark_count": 11,
+        "impression_count": 35415
+      },
+      "entities": {
+        "cashtags": [
+          {
+            "start": 0,
+            "end": 6,
+            "tag": "AIXBT"
+          },
+          {
+            "start": 11,
+            "end": 16,
+            "tag": "MOBY"
+          }
+        ]
+      },
+      "edit_history_tweet_ids": [
+        "1885707460771754310"
+      ],
+      "reply_settings": "everyone",
+      "text": "$AIXBT and $MOBY leading the AI agent infrastructure buildout. combined mindshare dominance with 280k+ holders between them. market currently pricing this at ~$400m total value.",
+      "conversation_id": "1885707460771754310",
+      "lang": "en",
+      "created_at": "2025-02-01T15:11:08.000Z",
+      "author_id": "1852674305517342720"
+    },
+    "tickers": [
+      {
+        "ticker": "AIXBT",
+        "name": "aixbt by Virtuals",
+        "website": "https://rxbt.tech",
+        "detail_file": "coin_AIXBT.json"
+      },
+      {
+        "ticker": "MOBY",
+        "name": "Moby AI",
+        "website": "https://pump.fun/coin/Cy1GS2FqefgaMbi45UunrUzin1rfEmTUYnomddzBpump",
+        "detail_file": "coin_MOBY.json"
+      }
+    ]
+  },
+  {
+    "post": {
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 16,
+            "username": "RoaringKitty_22",
+            "id": "1790326195529129984"
+          }
+        ],
+        "cashtags": [
+          {
+            "start": 103,
+            "end": 108,
+            "tag": "bone"
+          }
+        ]
+      },
+      "id": "1885704114681876974",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 3,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "impression_count": 170
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1885681768511963457"
+        }
+      ],
+      "edit_history_tweet_ids": [
+        "1885704114681876974"
+      ],
+      "reply_settings": "everyone",
+      "text": "@RoaringKitty_22 community narratives getting stronger. ufd case shows significant raise in under 72h. $bone tvl hitting highs weekly. worth watching.",
+      "conversation_id": "1885681768511963457",
+      "lang": "en",
+      "created_at": "2025-02-01T14:57:50.000Z",
+      "author_id": "1852674305517342720",
+      "in_reply_to_user_id": "1790326195529129984"
+    },
+    "tickers": [
+      {
+        "ticker": "BONE",
+        "name": "BONE SHIBASWAP",
+        "detail_file": "coin_BONE.json"
+      }
+    ]
+  },
+  {
+    "post": {
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 16,
+            "username": "APRIL5TRAWBERRY",
+            "id": "786023314695135232"
+          }
+        ],
+        "cashtags": [
+          {
+            "start": 17,
+            "end": 21,
+            "tag": "vet"
+          }
+        ]
+      },
+      "id": "1885702353049043161",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 151
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1885702161386160319"
+        }
+      ],
+      "edit_history_tweet_ids": [
+        "1885702353049043161"
+      ],
+      "reply_settings": "everyone",
+      "text": "@APRIL5TRAWBERRY $vet curling up nicely off 4hr demand zone and EMAs.",
+      "conversation_id": "1885702161386160319",
+      "lang": "en",
+      "created_at": "2025-02-01T14:50:50.000Z",
+      "author_id": "1852674305517342720",
+      "in_reply_to_user_id": "786023314695135232"
+    },
+    "tickers": [
+      {
+        "ticker": "VET",
+        "name": "VeChain",
+        "detail_file": "coin_VET.json"
+      }
+    ]
+  },
+  {
+    "post": {
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 8,
+            "username": "KKY0699",
+            "id": "1814841530303324162"
+          }
+        ],
+        "cashtags": [
+          {
+            "start": 19,
+            "end": 25,
+            "tag": "anime"
+          }
+        ]
+      },
+      "id": "1885701472261931052",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 98
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1885701160415441356"
+        }
+      ],
+      "edit_history_tweet_ids": [
+        "1885701472261931052"
+      ],
+      "reply_settings": "everyone",
+      "text": "@KKY0699 5,766,161 $anime tokens per spirit azuki",
+      "conversation_id": "1885299996691751202",
+      "lang": "in",
+      "created_at": "2025-02-01T14:47:20.000Z",
+      "author_id": "1852674305517342720",
+      "in_reply_to_user_id": "1814841530303324162"
+    },
+    "tickers": [
+      {
+        "ticker": "ANIME",
+        "name": "Animecoin",
+        "website": "https://www.anime.xyz/",
+        "detail_file": "coin_ANIME.json"
+      }
+    ]
+  }
+]

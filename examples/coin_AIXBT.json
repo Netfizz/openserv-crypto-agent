@@ -1,0 +1,260 @@
+{
+  "name": "aixbt by Virtuals",
+  "symbol": "AIXBT",
+  "logo": "https://dd.dexscreener.com/ds-data/tokens/base/0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825.png?key=6a3b50",
+  "header": "https://dd.dexscreener.com/ds-data/tokens/base/0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825/header.png?key=6a3b50",
+  "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825?timestamp=1738451400000",
+  "links": [
+    {
+      "label": "Website",
+      "url": "https://rxbt.tech"
+    },
+    {
+      "label": "Virtuals",
+      "url": "https://app.virtuals.io/virtuals/1199"
+    },
+    {
+      "label": "twitter",
+      "url": "https://x.com/aixbt_agent"
+    },
+    {
+      "label": "telegram",
+      "url": "https://t.me/aixbtportal"
+    },
+    {
+      "label": "DexScreener",
+      "url": "https://dexscreener.com/base/0xeb3458046d3aa2fdbbbf4fee58c755744ec42ce2"
+    }
+  ],
+  "pairAddress": "0xeb3458046d3aA2fdbBbF4FEe58C755744ec42ce2",
+  "priceUsd": "0.3474",
+  "marketCapUsd": 297317372,
+  "pairs": [
+    {
+      "label": "aixbt by Virtuals/Virtual Protocol",
+      "symbol": "AIXBT/VIRTUAL",
+      "chainId": "base",
+      "dexId": "uniswap",
+      "pairAddress": "0x7464850CC1cFb54A2223229b77B1BCA2f888D946",
+      "priceUsd": "0.3473",
+      "url": "https://dexscreener.com/base/0x7464850cc1cfb54a2223229b77b1bca2f888d946",
+      "liquidityUsd": 5370337.77,
+      "transactions": {
+        "m5": {
+          "buys": 0,
+          "sells": 1
+        },
+        "h1": {
+          "buys": 73,
+          "sells": 9
+        },
+        "h6": {
+          "buys": 510,
+          "sells": 130
+        },
+        "h24": {
+          "buys": 1730,
+          "sells": 1227
+        }
+      },
+      "volumes": {
+        "h24": 1648675.83,
+        "h6": 695657.51,
+        "h1": 56538.93,
+        "m5": 446.09
+      },
+      "priceChanges": {
+        "m5": -0.21,
+        "h1": -3.19,
+        "h6": -9.21,
+        "h24": -21.16
+      },
+      "fdv": 346398524,
+      "marketCap": 297204076,
+      "pairCreatedAt": 1730525195000
+    },
+    {
+      "label": "aixbt by Virtuals/USD Coin",
+      "symbol": "AIXBT/USDC",
+      "chainId": "base",
+      "dexId": "uniswap",
+      "pairAddress": "0xf1Fdc83c3A336bdbDC9fB06e318B08EadDC82FF4",
+      "priceUsd": "0.3444",
+      "url": "https://dexscreener.com/base/0xf1fdc83c3a336bdbdc9fb06e318b08eaddc82ff4",
+      "liquidityUsd": 3274766.22,
+      "transactions": {
+        "m5": {
+          "buys": 9,
+          "sells": 16
+        },
+        "h1": {
+          "buys": 114,
+          "sells": 140
+        },
+        "h6": {
+          "buys": 943,
+          "sells": 936
+        },
+        "h24": {
+          "buys": 2653,
+          "sells": 2701
+        }
+      },
+      "volumes": {
+        "h24": 4785548.82,
+        "h6": 2091984.85,
+        "h1": 252730.81,
+        "m5": 7426.05
+      },
+      "priceChanges": {
+        "m5": -0.72,
+        "h1": -3.25,
+        "h6": -10.58,
+        "h24": -21.81
+      },
+      "fdv": 343505880,
+      "marketCap": 294722237,
+      "pairCreatedAt": 1732036823000
+    },
+    {
+      "label": "aixbt by Virtuals/Wrapped Ether",
+      "symbol": "AIXBT/WETH",
+      "chainId": "base",
+      "dexId": "aerodrome",
+      "pairAddress": "0x22A52bB644f855ebD5ca2edB643FF70222D70C31",
+      "priceUsd": "0.3451",
+      "url": "https://dexscreener.com/base/0x22a52bb644f855ebd5ca2edb643ff70222d70c31",
+      "liquidityUsd": 1996654.8,
+      "transactions": {
+        "m5": {
+          "buys": 6,
+          "sells": 13
+        },
+        "h1": {
+          "buys": 235,
+          "sells": 198
+        },
+        "h6": {
+          "buys": 2208,
+          "sells": 1857
+        },
+        "h24": {
+          "buys": 6271,
+          "sells": 5341
+        }
+      },
+      "volumes": {
+        "h24": 13667223.47,
+        "h6": 5145952.25,
+        "h1": 555872.87,
+        "m5": 6976.44
+      },
+      "priceChanges": {
+        "m5": -0.28,
+        "h1": -2.7,
+        "h6": -10.44,
+        "h24": -21.92
+      },
+      "fdv": 344178257,
+      "marketCap": 295299125
+    },
+    {
+      "label": "aixbt by Virtuals (Wormhole)/Wrapped SOL",
+      "symbol": "AIXBT/SOL",
+      "chainId": "solana",
+      "dexId": "raydium",
+      "pairAddress": "EekjuLbDZmmKvPqHL6u6p439ynJZim3yJKfL1CosREwk",
+      "priceUsd": "0.3430",
+      "url": "https://dexscreener.com/solana/eekjulbdzmmkvpqhl6u6p439ynjzim3yjkfl1cosrewk",
+      "liquidityUsd": 1301925.36,
+      "transactions": {
+        "m5": {
+          "buys": 7,
+          "sells": 4
+        },
+        "h1": {
+          "buys": 61,
+          "sells": 46
+        },
+        "h6": {
+          "buys": 701,
+          "sells": 606
+        },
+        "h24": {
+          "buys": 1813,
+          "sells": 1691
+        }
+      },
+      "volumes": {
+        "h24": 1555799.74,
+        "h6": 689648.81,
+        "h1": 60158.7,
+        "m5": 3742.24
+      },
+      "priceChanges": {
+        "m5": -0.95,
+        "h1": -3.63,
+        "h6": -10.5,
+        "h24": -22.28
+      },
+      "fdv": 14046827,
+      "marketCap": 293556219,
+      "pairCreatedAt": 1731904488000
+    },
+    {
+      "label": "aixbt by Virtuals (Wormhole)/Fartcoin ",
+      "symbol": "AIXBT/Fartcoin ",
+      "chainId": "solana",
+      "dexId": "meteora",
+      "pairAddress": "8sckEvh4uZrrPzJGGzmbdvVotZq4iwM3wUiNEcRnchoy",
+      "priceUsd": "0.3434",
+      "url": "https://dexscreener.com/solana/8sckevh4uzrrpzjggzmbdvvotzq4iwm3wuinecrnchoy",
+      "liquidityUsd": 70181.32,
+      "transactions": {
+        "m5": {
+          "buys": 7,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 56,
+          "sells": 11
+        },
+        "h6": {
+          "buys": 291,
+          "sells": 143
+        },
+        "h24": {
+          "buys": 580,
+          "sells": 388
+        }
+      },
+      "volumes": {
+        "h24": 208937.15,
+        "h6": 103693.47,
+        "h1": 13792.24,
+        "m5": 1958.23
+      },
+      "priceChanges": {
+        "m5": -1.62,
+        "h1": -4.8,
+        "h6": -11.25,
+        "h24": -20.34
+      },
+      "fdv": 14063065,
+      "marketCap": 293895580,
+      "pairCreatedAt": 1736812926000
+    }
+  ],
+  "volumes": {
+    "h24": 16350.34,
+    "h6": 7260.84,
+    "h1": 272.52,
+    "m5": 14.21
+  },
+  "priceChanges": {
+    "m5": -0.52,
+    "h1": -3.58,
+    "h6": -9.74,
+    "h24": -21.31
+  }
+}

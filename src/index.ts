@@ -10,6 +10,7 @@ import {
 } from './helpers'
 import { DexScreenerService } from './services/dexscreener-service'
 import { TwitterAnalyserService } from './services/twitter-analyser-service'
+import { TweetSummary, TickerSummaryEntry } from './services/interfaces/twitter-analyser-interface'
 
 // Create the agent
 const agent = new Agent({
@@ -169,7 +170,6 @@ agent.addCapability({
       .describe(
         'YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Posts will be provided.'
       ),
-
     // The `since_id` query parameter value must be less than the `until_id` query parameter value.
     since_id: z
       .string()
@@ -221,21 +221,6 @@ agent.addCapability({
           end_time: args.end_time,
           since_id: args.since_id,
           until_id: args.until_id,
-          expansions: [
-            'article.cover_media',
-            'article.media_entities',
-            'attachments.media_keys',
-            'attachments.media_source_tweet',
-            'attachments.poll_ids',
-            'author_id',
-            'edit_history_tweet_ids',
-            'entities.mentions.username',
-            'geo.place_id',
-            'in_reply_to_user_id',
-            'entities.note.mentions.username',
-            'referenced_tweets.id',
-            'referenced_tweets.id.author_id'
-          ].join(','), // Convertit l'array en string avec des virgules
           'tweet.fields': [
             'article',
             'attachments',
@@ -360,8 +345,8 @@ agent.addCapability({
         debugLogger('twitter-v2 response', response.output)
 
         // Tweets collection
-        const collection = response.output.data
-        if (!collection) {
+        const tweetCollection = response.output.data
+        if (!tweetCollection) {
           return `Warning: No tweets were found from Twitter user ID : "${user_id}"`
         }
 
@@ -370,72 +355,13 @@ agent.addCapability({
           workspaceId: action.workspace.id
         })
 
-        // Filters tweets
+        debugLogger('currentFiles', currentFiles)
+
+        // Filters tweets with ticker(s) mentioned
         const tweetsWithTickerMentionCollection =
-          twitterAnalyserService.filterTweetsWithTickerMention(collection)
+          twitterAnalyserService.filterTweetsWithTickerMention(tweetCollection)
 
-        const createdFiles = []
-
-        // Create a JSON file for each post and each ticker
-        for (const tweet of tweetsWithTickerMentionCollection) {
-          for (const ticker of tweet.tickers) {
-            const token = normalizeToken(ticker)
-
-            // Ignore posts that already have a corresponding file
-            const path = `tweet_${tweet.post.id}_${token}.json`
-            if (currentFiles.some((file: { path: string }) => file.path === path)) {
-              continue
-            }
-
-            try {
-              await agent.addLogToTask({
-                workspaceId: action.workspace.id,
-                taskId: action.task.id,
-                severity: 'info',
-                type: 'text',
-                body: `Retrieve ${token} informations`
-              })
-              const data = await dexScreenerService.findTokenBySymbol(token)
-
-              if (!data) {
-                continue
-              }
-
-              tweet.path = `tweet_${tweet.post.id}_${token}.json`
-              tweet.crypto = {
-                ticker: token,
-                name: data.name,
-                website: data.links?.[0]?.url,
-                summary: undefined,
-                data
-              }
-
-              await agent.uploadFile({
-                workspaceId: action.workspace.id,
-                path: tweet.path,
-                file: JSON.stringify(tweet, null, 2),
-                skipSummarizer: true
-                //taskIds: [action.task.id]
-              })
-
-              createdFiles.push(path)
-            } catch (error) {
-              debugLogger('Ticker info retrieving error', error)
-
-              await agent.addLogToTask({
-                workspaceId: action.workspace.id,
-                taskId: action.task.id,
-                severity: 'warning',
-                type: 'text',
-                body: `Retrieve ${token} informations error`
-              })
-            }
-          }
-        }
-
-        debugLogger('tweetsWithTickerMentionCollection', tweetsWithTickerMentionCollection)
-
-        // Extract and deduplicate tickers
+        // Extract and deduplicate ticker(s) found
         const allTickers = [
           ...new Set(
             tweetsWithTickerMentionCollection.flatMap((item: { tickers: string[] }) => item.tickers)
@@ -444,11 +370,121 @@ agent.addCapability({
 
         debugLogger('Ticker(s) found', allTickers)
 
-        if (createdFiles.length > 0) {
-          const files = JSON.stringify(createdFiles, null, 2)
-          return `Tweets mentioning ticker(s) successfully retrieve from Twitter user ID : "${user_id}".
-          Here is the list of files, one per tweet, each containing detailed cryptocurrency information (price, change, liquidity, volume, logo, links, socials, DEX and pairs) related to the mentioned ticker(s):
-          ${files}`
+        // Handle all tickers
+        const tickerCollection = []
+
+        // Retrieve information and create file for each ticker found
+        for (const ticker of allTickers) {
+          const token = normalizeToken(ticker)
+          const tickerFilePath = `coin_${token}.json`
+
+          try {
+            await agent.addLogToTask({
+              workspaceId: action.workspace.id,
+              taskId: action.task.id,
+              severity: 'info',
+              type: 'text',
+              body: `Retrieve ${token} informations`
+            })
+
+            // Fetch ticker data on Dexscreener
+            const data = await dexScreenerService.findTokenBySymbol(token)
+
+            if (!data) {
+              continue
+            }
+
+            // Create ticker file
+            await agent.uploadFile({
+              workspaceId: action.workspace.id,
+              path: tickerFilePath,
+              file: JSON.stringify(data, null, 2),
+              skipSummarizer: false
+              //taskIds: [action.task.id]
+            })
+
+            tickerCollection.push({
+              ticker: token,
+              name: data.name,
+              website: data.links?.[0]?.url,
+              detail_file: tickerFilePath
+            })
+          } catch (error) {
+            debugLogger('Ticker info retrieving error', error)
+
+            await agent.addLogToTask({
+              workspaceId: action.workspace.id,
+              taskId: action.task.id,
+              severity: 'warning',
+              type: 'text',
+              body: `Retrieve ${token} informations error`
+            })
+          }
+        }
+
+        debugLogger('tickerCollection', tickerCollection)
+
+        const resultCollection = []
+        const summaryCollection = []
+
+        // Create a JSON file for each post and each ticker
+        for (const tweet of tweetsWithTickerMentionCollection) {
+          // instanciate summary
+          const tweetSummary: TweetSummary = {
+            tweet: {
+              id: tweet.post.id,
+              text: tweet.post.text
+            },
+            tickers: []
+          }
+
+          for (const ticker of tweet.tickers) {
+            const token = normalizeToken(ticker)
+            const entry = tickerCollection.find(item => item.ticker === token)
+            if (entry) {
+              tweetSummary.tickers.push(entry)
+            }
+          }
+
+          if (tweetSummary.tickers.length > 0) {
+            summaryCollection.push(tweetSummary)
+            resultCollection.push({
+              ...tweet,
+              tickers: tweetSummary.tickers
+            })
+          } else {
+            await agent.addLogToTask({
+              workspaceId: action.workspace.id,
+              taskId: action.task.id,
+              severity: 'warning',
+              type: 'text',
+              body: `Skip tweet ${tweet.post.id}, no information found for ${tweet.tickers.join(', ')}`
+            })
+          }
+        }
+
+        debugLogger('resultCollection', resultCollection)
+
+        if (resultCollection.length > 0) {
+          const tweetsPath = `tweets.json`
+
+          await agent.uploadFile({
+            workspaceId: action.workspace.id,
+            path: tweetsPath,
+            file: JSON.stringify(resultCollection, null, 2),
+            skipSummarizer: false
+          })
+
+          const Summary = JSON.stringify(summaryCollection, null, 2)
+          return `Tweets mentioning ticker(s) successfully retrieved from Twitter user ID: "${user_id}" and saved in ${tweetsPath}.
+Each tweet entry contains a collection of mentioned tickers, including:
+- Ticker name
+- Official website
+- File path where the detailed cryptocurrency information is stored ("detail_file").
+
+These files contain comprehensive details such as price, change, liquidity, volume, logo, links, socials, DEX, and trading pairs for each mentioned ticker.
+
+Summary: ${Summary}`
         } else {
           return `Tweets successfully retrieve from Twitter user ID : "${user_id}" but no ticker(s) found.`
         }

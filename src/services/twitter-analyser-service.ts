@@ -64,7 +64,7 @@ export class TwitterAnalyserService {
           // Match tickers in the post text
           const tickers = post.text.match(/\$\b[A-Za-z]{2,}\b/g)
           // Return the enriched object if tickers are found, otherwise null
-          return tickers ? { post, path: null, tickers, crypto: null } : null
+          return tickers ? { post, tickers } : null
         })
         // Filter out null values
         .filter((item: PostWithTickers | null): item is PostWithTickers => item !== null)

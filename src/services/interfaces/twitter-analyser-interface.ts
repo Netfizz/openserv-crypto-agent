@@ -3,7 +3,7 @@ import { TokenData } from './dexscreener-interfaces'
 // Types
 export type Post = {
   text: string
-  id: number
+  id: string
 }
 
 export type File = {
@@ -20,7 +20,20 @@ export type CryptoData = {
 
 export type PostWithTickers = {
   post: Post
-  path: string | null
   tickers: string[]
-  crypto: CryptoData | null
+}
+
+export interface TickerSummaryEntry {
+  ticker: string
+  name: string
+  website?: string
+  detail_file: string
+}
+
+export interface TweetSummary {
+  tweet: {
+    id: string
+    text: string
+  }
+  tickers: TickerSummaryEntry[]
 }

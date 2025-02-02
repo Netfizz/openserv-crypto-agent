@@ -1,92 +1,73 @@
-# Agent Starter
+# DeFAI Assistant Agent
 
-A starter project to help you get started with [OpenServ Labs SDK](https://github.com/openserv-labs/sdk) - a powerful TypeScript framework for building non-deterministic AI agents with advanced cognitive capabilities.
+**DeFAI Assistant** is an intelligent agent designed to provide in-depth insights into the cryptocurrency ecosystem by seamlessly retrieving and analyzing real-time data. Built with OpenServ SDK and leveraging DexScreener API.
+Stay ahead with **DeFAI Assistant**—your AI-powered assistant for smarter crypto tracking and analysis. 🚀
 
-This starter provides a minimal setup to help you understand the basics of the SDK. For more advanced features like tasks, file operations, and inter-agent collaboration, check out the [SDK documentation](https://github.com/openserv-labs/sdk).
+## 🔍 Comprehensive Token Analysis
+Instantly access key information about any token using its ticker or name, including:
+- Official links, logos, and social media profiles
+- Live price updates
+- Percentage changes
+- Liquidity metrics
+- Trading volume
 
-## Setup
+## 🐦 Advanced Twitter Monitoring
+Retrieve tweets from **any Twitter user**, extract mentioned ticker(s), and apply powerful filtering options:
+- Fetch up to the **100 most recent tweets**
+- Retrieve tweets within a specific date range
+- Fetch tweets between two tweet IDs
 
-1. Clone this repository
-2. Install dependencies:
+---
 
-```bash
-npm install
-```
+## How to Use the DeFAI Assistant Agent
 
-3. Copy `.env.example` to `.env` and fill in your configuration:
+### Prompt examples
+1. **Request a Token information**  
+   Ask the Project Manager to assign a task to the **DeFAI Assistant** by providing a specific ticker. Example:
+      ```
+      Find information about $SERV
+      ```
 
-```bash
-cp .env.example .env
-```
+2. **Retrieve tweets from a specific Twitter user**
+- Retrieve the most recent tweets from a specific Twitter username, with detailed information related to the ticker(s) attached to each tweet.
+  ```
+  Retrieve lastest tweets from @aixbt_agent
+  ```
+- Retrieve the 50 most recent tweets from a specific Twitter user ID, with detailed information related to the ticker(s) attached to each tweet.
+  ```
+  Retrieve 50 lastest tweets from user_id 1852674305517342720
+  ```
 
-4. Update the environment variables in `.env`:
-   - `OPENSERV_API_KEY`: Your OpenServ Labs API key
+- Retrieve the most recent tweets from a specific Twitter user ID within a given UTC date range, or specify only a start date or an end date.
+  ```
+  Retrieve tweets from AIXBT (Twitter ID: 1852674305517342720) between 2025-02-01 15:56 and 2025-02-01 16:26
+  ```
 
-## Example Agent
+  Retrieve the most recent tweets from a specific Twitter username between two tweet IDs, or specify only a starting or ending tweet ID, with detailed information related to the ticker(s) attached to each tweet.
+  ```
+  Retrieve tweets from @aixbt_agent since tweet id 1885677278312767934 until 1885707460771754311
+  ```
 
-The starter includes a simple example agent that can perform basic arithmetic:
+---
 
-```typescript
-// Example usage
-const response = await agent.process({
-  messages: [
-    {
-      role: 'user',
-      content: 'add 13 and 29'
-    }
-  ]
-})
-```
+### 🗂️ JSON Response Examples
+Examples of JSON responses can be found in the `/examples` folder.
 
-## Development
+### Prerequisites
+
+- Node.js >= 18.0.0
+- OpenServ API Key
+- OpenAI API Key
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+
+### Development
 
 Run the development server with hot reload:
 
 ```bash
 npm run dev
 ```
-
-## Code Quality
-
-The project uses ESLint and Prettier for code quality and formatting:
-
-```bash
-# Run ESLint
-npm run lint
-
-# Fix ESLint issues
-npm run lint:fix
-
-# Format code with Prettier
-npm run format
-```
-
-## Building
-
-Build the project:
-
-```bash
-npm run build
-```
-
-Run the built version:
-
-```bash
-npm start
-```
-
-## Notes
-
-- The project is set up with TypeScript, ts-node-dev for development, and includes VS Code debugging configuration
-- Environment variables are validated using Zod
-- ESLint and Prettier are configured for consistent code style
-- The agent uses natural language processing to understand and execute commands
-
-## Next Steps
-
-Once you're comfortable with the basics, explore more advanced features in the [OpenServ Labs SDK](https://github.com/openserv-labs/sdk):
-- Tasks and workflows
-- Chat interactions
-- File operations
-- Custom capabilities
-- Inter-agent collaboration
